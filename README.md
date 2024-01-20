@@ -17,8 +17,6 @@ Employee attrition is a critical aspect of human resource management, representi
         A K-Nearest Neighbors classifier is trained on the PCA-transformed features, and its performance is evaluated using key metrics and a confusion matrix.
     * Support Vector Machine (SVM)
         A Support Vector Machine (SVM) classifier with a linear kernel is trained on the PCA-transformed features, and its performance is evaluated using key metrics and a confusion matrix
-    * K-Means
-        K-Means clustering is applied to the PCA-transformed features. However, accuracy may not be the most suitable metric for this model.
     * Decision Tree
         A Decision Tree classifier is trained on the PCA-transformed features, and its performance is evaluated using key metrics and a confusion matrix.
 Note - Some models (e.g., Mean-Shift, SVM, Decision Tree) resulted in precision, recall, and F1-Score being set to 0.0 due to no predicted samples. This could indicate issues with the model or the dataset.
