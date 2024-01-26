@@ -1,23 +1,76 @@
-# EMPLOYEE ATTRITION
-Employee attrition is a critical aspect of human resource management, representing the departure of employees from an organization. Understanding and predicting attrition can aid in strategic workforce planning and retention efforts. This comprehensive documentation outlines the entire process of analyzing employee attrition using a dataset, encompassing data preprocessing, visualization, and the implementation of various machine learning models.
+# Employee Attrition Prediction
 
-# Project step
+Employee attrition is a crucial aspect of human resource management, influencing strategic workforce planning and retention efforts. This comprehensive documentation guides you through the process of analyzing employee attrition using a dataset. The project encompasses data preprocessing, exploratory data analysis (EDA), and the implementation of various machine learning models.
 
-* Cleaning data
-    * Try to remove the attributes which are mostly None:
-        The columns with more than 90% empty values are dropped
-    * Encoding Categorical Columns:
-         Categorical columns are identified and encoded using the LabelEncoder from scikit-learn, converting them into a format suitable for machine learning models
-    * Normalizing data and creating Gaussian Distribution:
-        A Gaussian distribution is created for each attribute, and attributes with a standard deviation below the threshold (0.8) are excluded. This step ensures that the dataset adheres to a standard scale.
-* Feature Extraction with PCA 
-    Principal Component Analysis (PCA) is applied to reduce the dimensionality of the dataset
-* Machine Learning Models
-    * K-Nearest Neighbors (KNN)
-        A K-Nearest Neighbors classifier is trained on the PCA-transformed features, and its performance is evaluated using key metrics and a confusion matrix.
-    * Support Vector Machine (SVM)
-        A Support Vector Machine (SVM) classifier with a linear kernel is trained on the PCA-transformed features, and its performance is evaluated using key metrics and a confusion matrix
-    * Decision Tree
-        A Decision Tree classifier is trained on the PCA-transformed features, and its performance is evaluated using key metrics and a confusion matrix.
-Note - Some models (e.g., Mean-Shift, SVM, Decision Tree) resulted in precision, recall, and F1-Score being set to 0.0 due to no predicted samples. This could indicate issues with the model or the dataset.
+## V1 File
+
+### Project Steps
+
+#### Dataset. 
+The dataset contains employee information for predicting attrition, including attributes like age, daily rate, department, and more.
+
+#### Data Cleaning 
+Columns with over 90%  empty values were dropped to streamline the dataset.
+
+#### Data Preprocessing
+1. **Encoding Categorical Columns:**
+   Categorical columns were encoded using LabelEncoder.
+2. **Normalizing Data:**
+   A Gaussian distribution was created for each attribute. Attributes with a standard deviation below 0.8 were excluded after normalization.
+
+### Principal Component Analysis (PCA)
+
+Applied PCA for feature extraction and visualization.
+
+### Machine Learning Models
+
+Implemented the following models:
+
+- **Mean-Shift:**
+  Utilizes Mean-Shift clustering for prediction. Achieves an accuracy of 86.17%.
+  
+- **K-Nearest Neighbors (KNN):**
+  Employs a KNN classifier with k=3. Achieves an accuracy of 78.68%.
+  
+- **Support Vector Machine (SVM):**
+  Implements an SVM classifier with a linear kernel. Achieves an accuracy of 86.17%.
+
+- **K-Means:**
+  Applies K-Means clustering for prediction. Achieves accuracy metrics, precision, recall, and F1 score.
+
+- **Decision Tree:**
+  Trains a Decision Tree classifier. Achieves an accuracy of 86.17%.
+
+## V2 File
+
+### Data Visualization and EDA
+
+Explored through bar charts for feature comparison between different attributes to gain insights into employee attrition.
+
+#### We have used Random Forest Classifier for best results of Bar charts 
+The Random Forest Classifier was employed to identify the top features contributing to employee attrition. 
+**Top 10 Features:**
+- 'OverTime'
+- 'MonthlyIncome'
+- 'TotalWorkingYears'
+- 'Age'
+- 'YearsAtCompany'
+- 'StockOptionLevel'
+- 'JobLevel'
+- 'YearsWithCurrManager'
+- 'MaritalStatus'
+- 'JobRole'
+
+
+### Heatmap Analysis for Feature Selection
+
+#### Encoding Categorical Labels
+Categorical columns are encoded using LabelEncoder for numerical analysis.
+
+#### Correlation Heatmap
+A heatmap of the correlation matrix visualizes relationships between features, aiding in identifying potential correlations influencing employee attrition.
+
+#### Filtered Heatmap for Top Features
+Selected important features ('OverTime', 'MonthlyIncome', etc.) are analyzed in a filtered heatmap for deeper insights.
+
 
